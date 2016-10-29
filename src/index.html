@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html lang="ru" class="lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html lang="ru" class="lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html lang="ru" class="lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>mod23-24</title>
+	<link rel="shortcut icon" href="favicon.png" />
+	<meta name="description" content="" /> <!-- !!! -->
+	<meta http equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="css/libs.min.css" />
+	<link rel="stylesheet" href="css/style.min.css" />
+	<link rel="stylesheet" href="fonts/fontAwesome/css/font-awesome.css" />
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+<!-- ================
+
+		HEADER
+
+================ -->
+<div class="wrapper">
+	<header>
+		<h1 class="h1">mod23-24</h1>
+	</header>
+	
+	<!-- ================
+	
+			MAIN
+	
+	================ -->
+	<main class="main">
+		<script type="text/template" id="wrapperTemplate">
+		<section id="mainSection">
+			<ul id="cont"></ul>
+			<input type="text" placeholder="set a value" name="addItem" id="addItem">
+			<button id="addBtn">add</button>
+		</section>
+		</script>
+	</main>
+	
+	
+<form id="test-form" class="white-popup-block mfp-hide">
+	<h1>Form</h1>
+	<fieldset style="border:0;">
+		<p>Lightbox has an option to automatically focus on the first input. It's strongly recommended to use <code>inline</code> popup type for lightboxes with form instead of <code>ajax</code> (to keep entered data if the user accidentally refreshed the page).</p>
+		<ol>
+			<li>
+				<label for="name">Name</label>
+				<input id="name" name="name" placeholder="Name" required="" type="text">
+			</li>
+			<li>
+				<label for="email">Email</label>
+				<input id="email" name="email" placeholder="example@domain.com" required="" type="email">
+			</li>
+			<li>
+				<label for="phone">Phone</label>
+				<input id="phone" name="phone" placeholder="Eg. +447500000000" required="" type="tel">
+			</li>
+			<li>
+				<label for="textarea">Textarea</label><br>
+				<textarea id="textarea">Try to resize me to see how popup CSS-based resizing works.</textarea>
+			</li>
+		</ol>
+	</fieldset>
+</form>
+
+
+	<script type="text/template" id="listTemplate">
+
+
+	
+	<% for( var i = 0; i < data.length; i++ ){ %>
+		<li class="list"><%= data[i] %>
+			<i data-value="<%= data[i] %>" class="fa fa-times" aria-hidden="true"></i>
+			<i data-value="<%= data[i] %>" class="fa fa-pencil popup-with-form" href="#test-form" aria-hidden="true"></i>
+		</li>
+		<% }; %>
+	</script>
+</div>
+
+
+<!-- ================
+
+		SCRIPTS
+
+================ -->
+
+
+<script src="js/libs.min.js"></script>	
+<script src="js/tmpl.js"></script>
+<script src="js/model.js"></script>
+<script src="js/view.js"></script>
+<script src="js/controller.js"></script>
+<script src="js/main.js"></script>	
+
+
+	<!-- Yandex.Metrika counter --><!-- /Yandex.Metrika counter -->
+	<!-- Google Analytics counter --><!-- /Google Analytics counter -->
+</body>
+</html>
