@@ -6,7 +6,7 @@
 		self.data = newData;
 		
 
-		
+
 		self.addItem = function(item){
 
 			if(item.length === 0){
@@ -27,13 +27,18 @@
 			return self.data;
 		};
 
-		self.changeItem = function(item){
-			var result = 'changed prop';
+		self.changeItem = function(item, newValue){
+
 			var index = self.data.indexOf(item);
+			console.log(self.data);
 			if( index === -1){
 				return;
 			}
- 			self.data.splice(index, 1, result);
+ 			// self.data[index] = newValue;
+ 			self.data.splice(index, 1, newValue);
+ 			$('.span')[index].innerHTML = newValue;
+ 			console.log(index);
+
 
 			return self.data;
 		};

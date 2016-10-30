@@ -47,7 +47,6 @@
 		color: white;
 		font-size: 20px;
 		letter-spacing: 2px;
-		text-transform: capitalize;
 		transition: all .2s ease-out .1s;
 		&:last-child{
 			border-bottom: 1px solid #333;
@@ -92,6 +91,10 @@
 #addItem{
 	padding: 10px 30px;
 	margin: 30px;
+	border-top: 2px solid #469246;
+	border-left: 2px solid #469246;
+	border-right: 2px solid #0B2D0B;
+	border-bottom: 2px solid #0B2D0B;
 }
 
 #addBtn{
@@ -109,4 +112,33 @@
 		border-right: 2px solid #0B2D0B;
 	}
 
+}
+
+
+/*popup window*/
+.white-popup-block{
+  position: relative;
+  background: #FFF;
+  padding: 40px;
+  width: auto;
+  max-width: 300px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+#changeValue{
+	@extend #addItem;
+	margin: 20px 0;
+	height: 25px;
+	width: 80%;
+}
+
+.popup-modal-dismiss{
+	@extend #addBtn;
+	margin: 0px 10px 10px 0;
+	display: inline-block;
+}
+
+.setCansel{
+	background: #e45757;
 }
