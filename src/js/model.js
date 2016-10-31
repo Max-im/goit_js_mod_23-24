@@ -32,16 +32,13 @@ define(
 			self.changeItem = function(item, newValue){
 
 				var index = self.data.indexOf(item);
-				console.log(self.data);
 				if( index === -1){
 					return;
 				}
 	 			// self.data[index] = newValue;
 	 			self.data.splice(index, 1, newValue);
-	 			$('.span')[index].innerHTML = newValue;
-	 			console.log(index);
 
-
+				console.log(self.data);
 				return self.data;
 			};
 		}

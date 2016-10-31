@@ -10,7 +10,6 @@ var gulp       = require('gulp'), // Подключаем Gulp
 	pngquant     = require('imagemin-pngquant'), // Подключаем библиотеку для работы с png
 	cache        = require('gulp-cache'), // Подключаем библиотеку кеширования
 	spritesmith	 = require('gulp.spritesmith'), // Подключаем сборщик спрайтов
-	requirejs    = require('gulp-requirejs'), // Подключаем requirejs
 	autoprefixer = require('gulp-autoprefixer');// Подключаем библиотеку для автоматического добавления префиксов
 
 gulp.task('sass', function(){ // Создаем таск Sass
@@ -21,18 +20,7 @@ gulp.task('sass', function(){ // Создаем таск Sass
 		.pipe(browserSync.reload({stream: true})) // Обновляем CSS на странице при изменении
 });
 
-/*gulp.task('requirejsBuild', function() {
-    return requirejs({
-        baseUrl: 'src/js/req.js',
-        // out: 'src/js/main.js',
-        shim: {
-            // standard require.js shim options 
-        },
-        // ... more require.js options 
-    })
-        .pipe(gulp.dest('./deploy/')); // pipe it to the output DIR 
-});
-*/
+
 
 gulp.task('sprite', function(){
 	var spriteData = gulp.src('src/myFiles/sprite/*.png') //путь к картинкам для спрайта
@@ -57,10 +45,10 @@ gulp.task('browser-sync', function() { // Создаем таск browser-sync
 
 gulp.task('scripts', function() {
 	return gulp.src([ // Берем все необходимые библиотеки
-		'src/libs/jquery/dist/jquery.min.js', // Берем jQuery
-		'src/libs/jcarousel/dist/jquery.jcarousel.min.js', // Берем jCarousel
+		// 'src/libs/jquery/dist/jquery.min.js', // Берем jQuery
+		// 'src/libs/jcarousel/dist/jquery.jcarousel.min.js', // Берем jCarousel
 		//'src/libs/temp.js', // Берем Шаблонизатор Джона Резника
-		'src/libs/magnific-popup/dist/jquery.magnific-popup.min.js' // Берем Magnific Popup
+		// 'src/libs/magnific-popup/dist/jquery.magnific-popup.min.js' // Берем Magnific Popup
 		])
 		.pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
 		.pipe(uglify()) // Сжимаем JS файл
@@ -71,7 +59,7 @@ gulp.task('scripts', function() {
 // переделать указывать путь руками как в js!!!
 gulp.task('css-libs', function() {
 	return gulp.src([
-	'src/libs/magnific-popup/dist/magnific-popup.css' // Берем Magnific Popup
+//	'src/libs/magnific-popup/dist/magnific-popup.css' // Берем Magnific Popup
 	]) // Выбираем файл для минификации
 		.pipe(concat('libs.min.css')) //Собираем их в кучу в новом файле libs.min.css
 		.pipe(cssnano()) // Сжимаем

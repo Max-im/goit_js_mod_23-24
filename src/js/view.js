@@ -13,7 +13,7 @@ define(
 					input: $('#addItem'),
 					addBtn: $('#addBtn'),
 					listContainer: $('#cont'),
-					modalWindow: $('#test-modal'),
+					modalWindow: $('#modal_form'),
 					popupOk: $('.setOk')
 				};
 			};
@@ -27,12 +27,7 @@ define(
 			self.renderList(model.data);
 
 
-			// $('.popup-modal').magnificPopup({
-			// 	type: 'inline',
-			// 	preloader: false,
-			// 	focus: '#changeValue',
-			// 	modal: true
-			// });
+			
 		
 		}
 	}

@@ -7,10 +7,8 @@ define(
 			var self = this;
 			view.elements.addBtn.click(addItem);
 			(view.elements.listContainer).on('click', '.fa-times', removeItem);
-			// view.elements.listContainer.click('.fa-pencil', openModal);
-			// view.elements.modalWindow.click('.setCansel', closeModal);
+			view.elements.listContainer.on('click', '.fa-pencil', openModal);
 		
-
 			function addItem(){
 				var newItem = view.elements.input.val();
 				model.addItem(newItem);
@@ -27,25 +25,40 @@ define(
 
 
 			function openModal(e){
-				var item = $(this).attr('data-value');
-				view.elements.modalWindow.on('click', '.setOk', function(e){
-					e.preventDefault();
-					var newValue = $('#changeValue').val();
-					model.changeItem(item, newValue);
-					$('#changeValue').val('');
-					$.magnificPopup.close();
-				});
-			};
-
-
-			function closeModal(e){
-				e.preventDefault();
+				e.preventDefault(); 
 				$('#changeValue').val('');
-				$.magnificPopup.close();
+				var item = $(this).attr('data-value');
+				$('#overlay').fadeIn(400,
+		 		function(){ 
+				$('#modal_form') 
+					.css('display', 'block') 
+					.animate({opacity: 1, top: '50%'}, 200); 
+				});
+				view.elements.modalWindow.on('click', '.setOk', changeItem);
+				function changeItem(){
+					var newChangeItem = $('#changeValue').val();
+					console.log( item);
+					console.log(newChangeItem);
+					// console.log( item);
+					model.changeItem(item, newChangeItem);
+					closeModal();
+					view.renderList(model.data);
+					console.log(model.data);
+				}				
+				view.elements.modalWindow.on('click', '.close', closeModal);
+				function closeModal(){
+					$('#modal_form')
+					.animate({opacity: 0, top: '45%'}, 200, 
+					function(){ 
+						$(this).css('display', 'none'); 
+						$('#overlay').fadeOut(400); 
+					});
+				};
 			};
+			
+
 
 			
-			return {};
 		}
 	}
 )

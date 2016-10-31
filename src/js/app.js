@@ -1,11 +1,13 @@
 requirejs.config({
 	paths: {
 		'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery'
+		
 	},
 	shim: {
 		'jquery':{
 			exports: "jQuery"
 		}
+
 	}
 });
 
@@ -15,10 +17,9 @@ require(
 	"tmpl",
 	"Model",
 	"View",
-	"Controller",
-	"main"
+	"Controller"
 	],
-	function($, tmpl, Model, View, Controller, main){
+	function($, tmpl, Model, View, Controller){
 		
 
 		// ajax
@@ -34,11 +35,7 @@ require(
 			var firstData = myObj.start;
 			var model = new Model(firstData);
 			var view = new View(model);
-			console.log(view.elements.addBtn);
 			var controller = new Controller(model, view);
-
-
-
 	}
 )
 
