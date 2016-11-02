@@ -22,17 +22,30 @@ require(
 	function($, tmpl, Model, View, Controller){
 		
 
-		// ajax
-			var jsonElem = $.ajax({
-				url: "../json/db.json",
-				async: false
-			});
-			var myObj = $.parseJSON(jsonElem.responseText);
+		// // ajax
+		// 	var myObj;
+		// 	var myArr = [];
+		// 	$.getJSON("../json/db.json",function(result){
+		// 		// myObj = success.start;
+		// 		// var myText = $.parseJSON(myObj.responseText);
+		// 		myArr = $.each(result, function(i, field, j){
+		//             var len = field.length;
+		//             var newArr = [];
+		//             for(var j = 0; j < len; j++){
+		//             	newArr[j] = field[j];
+		//             	// console.log(field[j]);
+		//             	// console.log(myArr);
+		//             }
+		//             	// return myArr;
+		//         });
+		// 	});
+		//     console.log(newArr);
 
 
 
 			// init
-			var firstData = myObj.start;
+			// var firstData = myArr;
+			var firstData = ["test1", "name", "js", "gulp", "babel"];
 			var model = new Model(firstData);
 			var view = new View(model);
 			var controller = new Controller(model, view);
