@@ -1,2 +1,2 @@
-# goit_js_mod_23-24
+# MVC todo
 simple todo list with ugly design
